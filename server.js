@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 
 var port = process.env.PORT || 3000;
+app.use(express.static(__dirname + '/app/'));
 
 function Adjective() {
   this.sleepy = true;
@@ -24,7 +25,8 @@ app.get('/adjective', function(req, res) {
 });
 
 app.get('/', function(req, res) {
-  res.send('Hello Universe!');
+  //////res.send('Hello Universe!');
+  res.sendFile('index.html');
 });
 
 
