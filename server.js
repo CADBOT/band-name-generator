@@ -19,10 +19,14 @@ function getRandomWord (object) {
   return {word: randomProp};
 }
 
+app.get('/adjective', function(req, res) {
+  res.json(getRandomWord(adjective));
+});
 
 app.get('/', function(req, res) {
   res.send('Hello Universe!');
 });
+
 
 app.listen(port, function() {
   console.log('server started on port ' + port);
